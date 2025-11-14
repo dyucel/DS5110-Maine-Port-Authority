@@ -37,7 +37,6 @@ def get_file_metadata(path):
 def main():
     
     input_directory = sys.argv[1]
-    # input_directory = r"C:\Users\jovie\DS5100\DS5110-Maine-Port-Authority\testing_code\data\Leases-Licenses"
     for file in os.listdir(input_directory):
         path = os.path.join(input_directory, file)
         print(f'\nProcessing {file}...')
