@@ -56,7 +56,7 @@ ocr_text_output_2/
 
 Each file retains the same base name as its original PDF, ensuring a 1:1 mapping used by the renaming and grouping modules.
 
-### 2. Metadata Extraction (getimagemetadata.py)
+### 2. Metadata Extraction (extract_metadata.py)
 
 Our program focuses on two main types of files: PDFs and DOCX. Both of these file types contain embedded, document-level metadata, but require different libraries to access. They are detailed as follows:
 
