@@ -58,31 +58,47 @@ Each file retains the same base name as its original PDF, ensuring a 1:1 mapping
 
 ### 2. Metadata Extraction (getimagemetadata.py)
 
-We have three primary types of documents that we will be examining.
+Our program focuses on two main types of files: PDFs and DOCX. Both of these file types contain embedded, document-level metadata, but require different libraries to access. They are detailed as follows:
 
 1. .pdf
 
     More information available here regarding the library: https://pypdf2.readthedocs.io/en/3.x/modules/DocumentInformation.html
     
-    This code extracts the metadata available in a document's head.
+    This code extracts the embedded metadata available in a file.
     
-    We can access the following attributes that are part of nearly every PDF file:
+    We can access the following properties that are part of nearly every PDF file:
     
-    ...File Author
-    ...File Creation Date
-    ...File Creator
-    ...File Modified Date
-    ...File Producer
-    ...File Subject
-    ...File Title
+    ...File Author (str)
+    ...File Creation Date (datetime)
+    ...File Creator (str)
+    ...File Modified Date (datetime)
+    ...File Producer (str)
+    ...File Subject (str)
+    ...File Title (str)
+
+   Each value actually consists of two properties: standard and a "raw" version, which always returns a TextStringObject.
 
 2. .doc
    
-    *** Look into the Document Python library.
-   
-3. .txt
+    More information available here regarding the library: https://python-docx.readthedocs.io/en/latest/dev/analysis/features/coreprops.html
 
-    Text files do not contain metadata.
+   We can access the following properties that are part of nearly every DOCX file:
+
+   ...author (unicode)
+   ...category (unicode)
+   ...comments (unicode)
+   ...content_status (unicode)
+   ...created (datetime)
+   ...identifier (unicode)
+   ...keywords (unicode)
+   ...language (unicode)
+   ...last_modified_by (unicode)
+   ...last_printed (datetime)
+   ...modified (datetime)
+   ...revision (int)
+   ...subject (unicode)
+   ...title (unicode)
+   ...version (unicode)
 
 ### 3. File Renaming (documenttitling2.py)
 
